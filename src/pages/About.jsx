@@ -18,7 +18,7 @@ function About() {
             <div className="relative flex justify-center">
               <div className="w-64 h-64 rounded-full overflow-hidden border-4 border-blue-400/20">
                 <img
-                  src="/src/assets/images/profile.png"
+                  src="https://avatars.githubusercontent.com/u/83879123?v=4"
                   alt="Profile"
                   className="object-cover w-full h-full transform hover:scale-105 transition-transform duration-300"
                 />
