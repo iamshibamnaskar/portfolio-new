@@ -9,7 +9,10 @@ const richTexts = [
     content: `**Hello, I am Shibam.**  
 A passionate full stack developer from India.  
 To know more, grab and slide \n
-or use ⬅️ ➡️ keys`,
+or use ⬅️ ➡️ keys \n
+or Scroll.
+`
+,
     path: '/about',
     btn: "Open About"
   },

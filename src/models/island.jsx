@@ -66,11 +66,19 @@ const Island = ({ isRotating, setIsRotating,setCurrentStage, ...props }) => {
     };
     
 
+    const handleWheel = (e) => {
+        e.preventDefault();
+        const delta = e.deltaY * -0.0001;
+        islandRef.current.rotation.y += delta;
+        rotationSpeed.current = delta;
+    };
+
     useEffect(() => {
         const canvas = gl.domElement
         canvas.addEventListener('pointerdown', handlePointerDown);
         canvas.addEventListener('pointerup', handlePointerUp);
         canvas.addEventListener('pointermove', handlePointerMove);
+        canvas.addEventListener('wheel', handleWheel, { passive: false });
         document.addEventListener('keydown', handleKeyDown);
         document.addEventListener('keyup', handleKeyUp);
 
@@ -78,6 +86,7 @@ const Island = ({ isRotating, setIsRotating,setCurrentStage, ...props }) => {
             canvas.removeEventListener('pointerdown', handlePointerDown);
             canvas.removeEventListener('pointerup', handlePointerUp);
             canvas.removeEventListener('pointermove', handlePointerMove);
+            canvas.removeEventListener('wheel', handleWheel);
             document.removeEventListener('keydown', handleKeyDown);
             document.removeEventListener('keyup', handleKeyUp);
         }
